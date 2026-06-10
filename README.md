@@ -1,82 +1,95 @@
-# Aero Ai (formerly ChatGPT Clone)
+# Aero AI
 
-A lightweight, locally-hosted AI chat assistant built using Python (FastAPI), HTML/Vanilla JS, and Google's Gemini API. The application includes a clean, dark-themed web interface to chat with the AI, supports image uploads, and saves chat history using a local SQLite database.
+Aero AI is a next-generation, high-performance intelligent assistant featuring a premium, interactive 3D showroom interface. Built with a FastAPI backend and a hardware-accelerated vanilla HTML/CSS/JS frontend, the application offers dynamic 3D room viewport rotations, grid spotlights, and secure local user workspaces.
 
-## Features
+---
 
-- **Gemini-powered Chat**: Uses the `gemini-2.5-flash` model for fast, smart, and context-aware responses.
-- **Multimodal Capabilities**: Support for image uploads alongside text queries, leveraging Gemini's vision capabilities.
-- **Session Management**: Sidebar to create new chats, switch between them, and delete previous conversations.
-- **Chat History**: Automatically saves your conversations in a local database so you don't lose them across restarts.
-- **Premium UI**: A sleek, responsive, modern interface inspired by top-tier chat platforms.
-- **Markdown & Syntax Highlighting**: Properly parses markdown and colors code blocks for readable code outputs.
+## 🌟 Key Features
 
-## Tech Stack
+* **Cinematic 3D Showroom Viewport**: Interactive 3D room space featuring floating gold dust particles (sparks) at various depth dimensions and a cursor-tracking grid spotlight on the floor and ceiling.
+* **Cinematic Transitions**: Smooth camera flight-zoom transformations transitioning from the welcome screen, through the credential card, and directly into the chat workspace.
+* **Alphanumeric Gmail Authentication**: Secure registration and login restricted to valid `@gmail.com` accounts, requiring a 6-character alphanumeric password stored using salted PBKDF2 hashing.
+* **Multimodal Chat (Gemini 2.5)**: Powered by Google's `gemini-2.5-flash` model for rapid, context-aware text responses and image analysis.
+* **Private Isolated Workspaces**: Automatic database-level workspace separation so each user has isolated, password-protected chat histories.
+* **Premium Typography & Code Highlighting**: Uses Google Fonts Inter typography, fully formatted markdown parsing, and Atom One Dark code blocks with syntax highlighting.
+* **Responsive Light/Dark Mode**: A luxury warm gold, amber, and bronze dark mode paired with a sophisticated warm champagne/ivory light mode.
 
-- **Backend**: Python 3, FastAPI, SQLite
-- **Frontend**: HTML5, CSS3, JavaScript (Vanilla)
-- **AI Model**: Google Generative AI (Gemini 2.5 Flash)
+---
 
-## Prerequisites
+## 🛠️ Tech Stack
 
-- Python 3.8+
-- A Google Gemini API Key. You can get one from [Google AI Studio](https://aistudio.google.com/).
+* **Backend**: Python 3.9+, FastAPI, SQLite3, Pydantic, Uvicorn
+* **Frontend**: HTML5, Vanilla CSS3, Vanilla ES6 JavaScript, Markdown parser (Marked), Code highlighter (Highlight.js)
+* **AI Model**: Google Generative AI (Gemini 2.5 Flash API)
 
-## Installation
+---
 
-1. **Clone the repository** (if you haven't already):
+## 🚀 Getting Started
+
+### Prerequisites
+* Python 3.8+ installed on your system.
+* A Gemini API Key from [Google AI Studio](https://aistudio.google.com/).
+
+### Installation & Local Setup
+
+1. **Clone the repository**:
    ```bash
-   git clone <your-repository-url>
-   cd chatgpt-clone
+   git clone https://github.com/bhavyanshmehta/aero-ai.git
+   cd aero-ai
    ```
 
-2. **Create a virtual environment**:
+2. **Establish virtual environment**:
    ```bash
    python3 -m venv venv
-   source venv/bin/activate  # On Windows use: venv\Scripts\activate
+   source venv/bin/activate  # On Windows: venv\Scripts\activate
    ```
 
-3. **Install dependencies**:
+3. **Install python packages**:
    ```bash
    pip install -r requirements.txt
    ```
 
-4. **Set up environment variables**:
-   Copy the example environment file and add your Gemini API key.
+4. **Configure Environment Variables**:
+   Copy the example environment file and insert your credentials.
    ```bash
    cp .env.example .env
    ```
-   Open the `.env` file and replace `your_gemini_api_key_here` with your actual API key:
+   Open the `.env` file and insert your Gemini API Key:
+   ```env
+   GEMINI_API_KEY=your_gemini_api_key_here
    ```
-   GEMINI_API_KEY=your_actual_api_key_here
-   ```
 
-## Running the Application
+---
 
-Start the backend server using Uvicorn:
+## 💻 Running the Server
 
+Start the FastAPI application on Uvicorn:
 ```bash
 python3 main.py
 ```
-
-Or run it directly with Uvicorn:
-
+Or run directly using:
 ```bash
 uvicorn main:app --reload
 ```
+Open your web browser and navigate to:
+👉 **`http://localhost:8000`**
 
-Then, open your web browser and navigate to:
-**http://127.0.0.1:8000**
+---
 
-## Project Structure
+## 📂 Project Directory Structure
 
-- `main.py`: The FastAPI application, API endpoints, and Gemini integration.
-- `database.py`: SQLite database setup and query functions.
-- `static/`: Contains the frontend assets (`index.html`, `style.css`, `script.js`, etc.).
-- `requirements.txt`: Python dependencies.
-- `.env`: Environment variables (do not commit this file).
-- `.gitignore`: Specifies intentionally untracked files to ignore.
+```
+├── main.py                # FastAPI endpoints, auth cookies, and Gemini APIs
+├── database.py            # SQLite schema configuration and queries
+├── requirements.txt       # Python dependency declarations
+├── .env.example           # Reference environment template
+├── static/
+│   ├── index.html         # HTML layout structures
+│   ├── script.js          # 3D room tilt, particles, and API calls
+│   └── style.css          # Core design tokens, gradients, and animations
+```
 
-## License
+---
 
-This project is open-source and available under the MIT License.
+## 📄 License
+This project is open-source and distributed under the MIT License.
