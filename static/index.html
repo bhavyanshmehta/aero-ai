@@ -13,7 +13,58 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
 </head>
 <body>
-    <div class="app-container">
+    <div class="bg-mesh"></div>
+    
+    <!-- 3D Landing Welcome Screen -->
+    <div class="landing-screen" id="landing-screen">
+        <div class="scene" id="scene">
+            <div class="room" id="room">
+                <!-- 3D Floor Coordinate Grid -->
+                <div class="floor"></div>
+                
+                <!-- 3D Ceiling Coordinate Grid -->
+                <div class="ceiling"></div>
+                
+                <!-- Floating 3D Elements -->
+                <div class="floating-elements">
+                    <h1 class="landing-title" id="landing-title" data-text="AERO AI">AERO AI</h1>
+                    <p class="landing-subtitle" id="landing-subtitle">Next-Generation Multimodal Intelligent Assistant</p>
+                    
+                    <!-- Interactive Enter Button -->
+                    <button class="enter-btn" id="enter-btn">
+                        <span>Enter Aero AI</span>
+                        <span class="enter-btn-arrow">→</span>
+                    </button>
+                    
+                    <!-- 3D Auth Card -->
+                    <div class="auth-card" id="auth-card">
+                        <div class="auth-tabs">
+                            <button class="auth-tab active" id="tab-login">Login</button>
+                            <button class="auth-tab" id="tab-register">Register</button>
+                        </div>
+                        
+                        <form class="auth-form" id="auth-form">
+                            <div class="input-group">
+                                <label for="auth-username">Gmail Address</label>
+                                <input type="email" id="auth-username" placeholder="username@gmail.com" required autocomplete="username">
+                            </div>
+                            <div class="input-group">
+                                <label for="auth-password">6-Char Password</label>
+                                <input type="password" id="auth-password" placeholder="Alphanumeric (6 chars)" required autocomplete="current-password" minlength="6" maxlength="6">
+                            </div>
+                            <div class="error-msg" id="auth-error" style="display: none;"></div>
+                            <div class="success-msg" id="auth-success" style="display: none;">Account registered! Please sign in.</div>
+                            <button type="submit" class="auth-submit-btn" id="auth-submit-btn">
+                                <span id="auth-btn-text">Sign In</span>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="app-container hidden" id="app-container">
         <!-- Sidebar -->
         <aside class="sidebar">
             <button class="new-chat-btn" id="new-chat-btn">+ New Chat</button>
@@ -27,8 +78,17 @@
                 </button>
             </div>
             <div class="user-profile">
-                <div class="avatar">U</div>
-                <div class="user-info">User</div>
+                <div class="avatar" id="user-avatar">U</div>
+                <div class="user-details">
+                    <div class="user-info" id="user-username">User</div>
+                    <button class="logout-btn" id="logout-btn" title="Log Out">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+                            <polyline points="16 17 21 12 16 7"></polyline>
+                            <line x1="21" y1="12" x2="9" y2="12"></line>
+                        </svg>
+                    </button>
+                </div>
             </div>
         </aside>
 
@@ -39,7 +99,32 @@
             </div>
             <div class="chat-messages" id="chat-messages">
                 <div class="welcome-message" id="welcome-message">
-                    <h1>How can I help you today?</h1>
+                    <div class="welcome-header">
+                        <h1>How can I help you today?</h1>
+                        <p class="subtitle">Select a prompt below or type a message to start chatting with Aero Ai.</p>
+                    </div>
+                    <div class="suggestions-grid">
+                        <div class="suggestion-card" data-prompt="Analyze an image and describe its contents in detail.">
+                            <div class="card-icon">👁️</div>
+                            <h3>Analyze Image</h3>
+                            <p>Upload a photo and let Aero Ai explain what's inside.</p>
+                        </div>
+                        <div class="suggestion-card" data-prompt="Write a Python function to check if a string is a palindrome, including unit tests.">
+                            <div class="card-icon">💻</div>
+                            <h3>Python Coding</h3>
+                            <p>Ask for code help, debugging, or script generation.</p>
+                        </div>
+                        <div class="suggestion-card" data-prompt="Explain the difference between classical mechanics and quantum mechanics in simple terms.">
+                            <div class="card-icon">🧠</div>
+                            <h3>Explain Physics</h3>
+                            <p>Break down complex science or mathematical theories.</p>
+                        </div>
+                        <div class="suggestion-card" data-prompt="Draft a professional email requesting a meeting with a client to discuss a new project.">
+                            <div class="card-icon">✉️</div>
+                            <h3>Draft Email</h3>
+                            <p>Write emails, blogs, or essays with professional formatting.</p>
+                        </div>
+                    </div>
                 </div>
                 <!-- Dynamic messages go here -->
             </div>

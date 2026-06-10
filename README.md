@@ -1,19 +1,21 @@
-# ChatGPT Clone
+# Aero Ai (formerly ChatGPT Clone)
 
-A lightweight, locally-hosted ChatGPT clone built using Python (FastAPI), HTML/Vanilla JS, and Google's Gemini API. The application includes a clean web interface to chat with the AI and saves chat history using a local SQLite database.
+A lightweight, locally-hosted AI chat assistant built using Python (FastAPI), HTML/Vanilla JS, and Google's Gemini API. The application includes a clean, dark-themed web interface to chat with the AI, supports image uploads, and saves chat history using a local SQLite database.
 
 ## Features
 
-- **Gemini-powered Chat**: Uses the `gemini-2.5-flash` model for fast and smart responses.
-- **Session Management**: Sidebar to create new chats and view previous conversations.
+- **Gemini-powered Chat**: Uses the `gemini-2.5-flash` model for fast, smart, and context-aware responses.
+- **Multimodal Capabilities**: Support for image uploads alongside text queries, leveraging Gemini's vision capabilities.
+- **Session Management**: Sidebar to create new chats, switch between them, and delete previous conversations.
 - **Chat History**: Automatically saves your conversations in a local database so you don't lose them across restarts.
-- **Clean UI**: A sleek, responsive interface inspired by ChatGPT.
+- **Premium UI**: A sleek, responsive, modern interface inspired by top-tier chat platforms.
+- **Markdown & Syntax Highlighting**: Properly parses markdown and colors code blocks for readable code outputs.
 
 ## Tech Stack
 
 - **Backend**: Python 3, FastAPI, SQLite
-- **Frontend**: HTML, CSS, JavaScript (Vanilla)
-- **AI Model**: Google Generative AI (Gemini)
+- **Frontend**: HTML5, CSS3, JavaScript (Vanilla)
+- **AI Model**: Google Generative AI (Gemini 2.5 Flash)
 
 ## Prerequisites
 
